@@ -30,6 +30,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -115,6 +116,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Users\user\source\repos\Project3\Project3\client.c" />
+    <ClCompile Include="..\..\..\..\Users\user\source\repos\Project3\Project3\JsTetris.c" />
+    <ClCompile Include="..\..\..\..\Users\user\source\repos\Project3\Project3\server.c" />
+    <ClCompile Include="..\..\..\..\Users\user\source\repos\Project3\Project3\startPage.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Users\user\source\repos\Project3\Project3\blockEvent.h" />
+    <ClInclude Include="..\..\..\..\Users\user\source\repos\Project3\Project3\JsTetris.h" />
+    <ClInclude Include="..\..\..\..\Users\user\source\repos\Project3\Project3\printInfo.h" />
+    <ClInclude Include="..\..\..\..\Users\user\source\repos\Project3\Project3\resource.h" />
+    <ClInclude Include="..\..\..\..\Users\user\source\repos\Project3\Project3\tools.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
