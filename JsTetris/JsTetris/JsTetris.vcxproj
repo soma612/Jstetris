@@ -18,6 +18,20 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="blockEvent.h" />
+    <ClInclude Include="ConfigPage.h" />
+    <ClInclude Include="JsTetris.h" />
+    <ClInclude Include="PausePage.h" />
+    <ClInclude Include="printInfo.h" />
+    <ClInclude Include="StartPage.h" />
+    <ClInclude Include="tools.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="client.c" />
+    <ClCompile Include="JsTetris.c" />
+    <ClCompile Include="server.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{C4ABC100-272D-478C-A795-C4BC3E8B13CE}</ProjectGuid>
@@ -115,19 +129,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\Users\user\source\repos\Project3\Project3\client.c" />
-    <ClCompile Include="..\..\..\..\Users\user\source\repos\Project3\Project3\JsTetris.c" />
-    <ClCompile Include="..\..\..\..\Users\user\source\repos\Project3\Project3\server.c" />
-    <ClCompile Include="..\..\..\..\Users\user\source\repos\Project3\Project3\startPage.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\Users\user\source\repos\Project3\Project3\blockEvent.h" />
-    <ClInclude Include="..\..\..\..\Users\user\source\repos\Project3\Project3\JsTetris.h" />
-    <ClInclude Include="..\..\..\..\Users\user\source\repos\Project3\Project3\printInfo.h" />
-    <ClInclude Include="..\..\..\..\Users\user\source\repos\Project3\Project3\resource.h" />
-    <ClInclude Include="..\..\..\..\Users\user\source\repos\Project3\Project3\tools.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
