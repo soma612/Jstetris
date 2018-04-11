@@ -36,15 +36,15 @@
     <ClInclude Include="ConfigPage.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="server.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="client.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="client.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="JsTetris.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="server.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

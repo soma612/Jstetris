@@ -18,7 +18,7 @@ void configPage() {
 		{ "프리뷰 항상 켜기" }
 	};
 	
-	boolean menusSwitch[3] = {TRUE,FALSE,FALSE};
+	boolean menusSwitch[3] = {isTurnMode,isSpeedMode,isPreViewMode};
 	char turn[2][10] = {
 		{"우회전"},
 		{"좌회전"}
@@ -31,21 +31,25 @@ void configPage() {
 	for (i = 0; i < 42; i++) {
 		putsxy(16 + i, 6, rowLine);
 	}
+	
 	color(GREEN); putsxy(16, 8, menus[0]); color(WHITE);
+
 	color(YELLOW); putsxy(44, 8, turn[0]); color(WHITE);
 	putchxy(51, 8, '/');
 	putsxy(53, 8, turn[1]);
 
+
 	putsxy(16, 10, menus[1]);
-	putsxy(44, 10, isOnOff[0]); 
+	putsxy(44, 10, isOnOff[0]);
 	putchxy(48, 10, '/');
 	color(YELLOW); putsxy(51, 10, isOnOff[1]); color(WHITE);
 
-	putsxy(16, 12, menus[2]);
-	putsxy(44, 12, isOnOff[0]);
-	putchxy(48, 12, '/');
-	color(YELLOW);  putsxy(51, 12, isOnOff[1]); color(WHITE);
 
+	putsxy(16, 12, menus[2]);
+	color(YELLOW);  putsxy(44, 12, isOnOff[0]); color(WHITE);
+	putchxy(48, 12, '/');
+	putsxy(51, 12, isOnOff[1]); 
+	
 	color(GRAY); putsxy(30, 15, "설정완료(ENTER)"); color(WHITE);
 
 	while (isconfig) {

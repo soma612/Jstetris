@@ -4,10 +4,11 @@
 #include "StartPage.h"
 #include "PausePage.h"
 #include "ConfigPage.h"
+#include "server.h"
+#include "client.h"
 #include <process.h>
 
-HANDLE thread1;
-HANDLE thread2;
+
 
 int main() {
 	/*
@@ -23,7 +24,14 @@ int main() {
 	resz(80, 22);
 	//printf("%c%c",0xA1,0xE0); □ 문자 표현 코드
 	color(WHITE);
-	startPage();
+
+	char ch = _getch();
+
+	if (ch == '1') server();
+	else if (ch == '2') client();
+
+	getchar();
+	//startPage();
 
 	return 0;
 }
@@ -95,6 +103,7 @@ int PlayerMoveAction() {
 			if (pausePage() == 1) {
 				TerminateThread(thread1, 0);
 				TerminateThread(thread2, 0);
+				LeaveCriticalSection(&cs);
 				DeleteCriticalSection(&cs);
 				startPage();
 			}

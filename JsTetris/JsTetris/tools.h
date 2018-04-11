@@ -1,11 +1,14 @@
-//#pragma once
+#pragma once
 #define SKOUT_HEADER
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
 #include <time.h>
+#ifndef _WINSOCKAPI_
+#define _WINSOCKAPI_
 #include <windows.h>
+#endif
 #include <process.h>
 
 #define RED (FOREGROUND_RED | FOREGROUND_INTENSITY)
@@ -37,8 +40,9 @@ void setColor(HANDLE hStdOut, WORD Attribute);
 #define random(n) (rand() % (n))                        //0~n까지의 난수 발생
 
 // 이 매크로가 정의되어 있으면 함수의 원형만 선언하고 정의는 하지 않는다.
-//#ifndef SKOUT_PROTOTYPE_ONLY
+#ifndef SKOUT_PROTOTYPE_ONLY
 
+#define SKOUT_PROTOTYPE_ONLY
 // 화면을 모두 지운다.
 void clrscr()
 {
@@ -113,4 +117,4 @@ void setColor(HANDLE hStdOut, WORD Attribute) {
 	SetConsoleTextAttribute(hStdOut, Attribute);
 }
 
-//#endif  
+#endif  

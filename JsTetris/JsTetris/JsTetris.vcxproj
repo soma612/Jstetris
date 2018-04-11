@@ -20,17 +20,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="blockEvent.h" />
+    <ClInclude Include="client.h" />
     <ClInclude Include="ConfigPage.h" />
     <ClInclude Include="JsTetris.h" />
     <ClInclude Include="PausePage.h" />
     <ClInclude Include="printInfo.h" />
+    <ClInclude Include="server.h" />
     <ClInclude Include="StartPage.h" />
     <ClInclude Include="tools.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="client.c" />
     <ClCompile Include="JsTetris.c" />
-    <ClCompile Include="server.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

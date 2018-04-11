@@ -1,10 +1,12 @@
+#pragma once
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #include <process.h>
 #include "tools.h"
 
-#pragma once
+
 
 #define ESC 27
 #define SPACEBAR 32
@@ -45,6 +47,10 @@
 
 
 CRITICAL_SECTION cs;
+HANDLE thread1;
+HANDLE thread2;
+
+
 
 int stage[22][12];
 int holdBlock = -1;
@@ -66,6 +72,7 @@ boolean isPreViewMode = FALSE;
 boolean msgState = FALSE;
 boolean isBlockCreated = FALSE;
 boolean ishold = TRUE;
+boolean isConnected = TRUE;
 HANDLE hd;
 
 void putixy(int x, int y, int d) { gotoxy(x, y); printf("%d", d); }
