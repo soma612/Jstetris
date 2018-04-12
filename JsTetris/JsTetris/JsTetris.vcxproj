@@ -23,6 +23,7 @@
     <ClInclude Include="client.h" />
     <ClInclude Include="ConfigPage.h" />
     <ClInclude Include="JsTetris.h" />
+    <ClInclude Include="MultiModePage.h" />
     <ClInclude Include="PausePage.h" />
     <ClInclude Include="printInfo.h" />
     <ClInclude Include="server.h" />

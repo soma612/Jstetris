@@ -4,6 +4,7 @@
 #include "StartPage.h"
 #include "PausePage.h"
 #include "ConfigPage.h"
+#include "MultiModePage.h"
 #include "server.h"
 #include "client.h"
 #include <process.h>
@@ -11,27 +12,18 @@
 
 
 int main() {
-	/*
-	printf("Server = 1 / Client = 2");
-	char a = _getch();
-	if (a == '1') server();
-	else if (a == '2') client();
-	getchar();
-	exit(1);*/
 	hd = GetStdHandle(STD_OUTPUT_HANDLE);
 	srand((unsigned)time(NULL)); // 시간으로 랜덤 설정
 	setcursortype(NOCURSOR); //커서 깜박임 제거
 	resz(80, 22);
-	//printf("%c%c",0xA1,0xE0); □ 문자 표현 코드
 	color(WHITE);
-
-	char ch = _getch();
-
+	
+	/*char ch = _getch();
 	if (ch == '1') server();
 	else if (ch == '2') client();
+	getchar();*/
 
-	getchar();
-	//startPage();
+	startPage();
 
 	return 0;
 }
@@ -41,7 +33,7 @@ void playGame() {
 	printInfo();
 	printGameStart();
 	getchar();
-	loadStage();
+	//loadStage();
 	InitializeCriticalSection(&cs);
 	thread1 = _beginthreadex(NULL, 0, (_beginthreadex_proc_type)autoDownBlock, NULL, 0, NULL);
 	thread2 = _beginthreadex(NULL, 0, (_beginthreadex_proc_type)listenMsg, NULL, 0, NULL);

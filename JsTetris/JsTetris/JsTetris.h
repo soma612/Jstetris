@@ -7,6 +7,8 @@
 #include "tools.h"
 
 
+#define MOD_WAIT 0
+#define MOD_GAME 1
 
 #define ESC 27
 #define SPACEBAR 32
@@ -88,6 +90,7 @@ void playing();
 void listenMsg();
 
 void startPage();
+int startMultiMode();
 int pausePage();
 void configPage();
 void checkScore();

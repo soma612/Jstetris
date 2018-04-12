@@ -23,7 +23,10 @@ HANDLE server_recv[4];
 HANDLE server_accept;
 SOCKET sock;
 SOCKET client_sock[4];
+
+boolean connectSw = FALSE;
 int client_sock_count = 0;
+int pcount = 0;
 struct sockaddr_in addr, client_addr;
 char sendBuffer[1024];
 char recvBuffer[1024];
@@ -44,7 +47,7 @@ int sendData(char buffer[1024]) {
 }
 
 int acceptClient() {
-	while (isConnected) {
+	while (pcount == client_sock_count + 1) {
 		if ((client_sock[client_sock_count] = accept(sock, (struct sockaddr*)&client_addr, &addr_len)) > 0) {
 			printf("client ip : %s client_sock : %d\n", inet_ntoa(client_addr.sin_addr), client_sock[client_sock_count]);
 			server_recv[client_sock_count] = _beginthreadex(NULL, 0, (_beginthreadex_proc_type)receiveData, NULL, 0, NULL);
@@ -55,7 +58,9 @@ int acceptClient() {
 int receiveData() {
 	int client_num = client_sock_count;
 	client_sock_count++;
-	printf("recevieData 의 client_num : %d\n", client_num);
+	putixy(38, 0, client_sock_count+1);
+	connectSw = TRUE;
+	//printf("recevieData 의 client_num : %d\n", client_num);
 	while (isConnected) {
 		recv_len = recv(client_sock[client_num], recvBuffer, 1024, 0);
 		if (recv_len < 0) return 0;
@@ -78,14 +83,15 @@ int inputData() {
 }
 
 
-int server() {
+int server(int playerCount) {
+	pcount = playerCount;
 #ifndef __linux__
 	WSADATA wsaData;
 	WSAStartup(MAKEWORD(2, 2), &wsaData);
 #endif
 	if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
 		printf("소켓 생성 실패\n");
-		return 0;
+		return 1;
 	}
 	memset(&addr, 0, sizeof(addr));
 	addr.sin_family = AF_INET;
@@ -101,10 +107,24 @@ int server() {
 		return 1;
 	}
 	addr_len = sizeof(client_addr);
+	clrscr();
+	putsxy(0, 0, "상대방을 기다리는중.. 현재 접속자 수: 1");
+	while (playerCount != client_sock_count + 1) {
+		if ((client_sock[client_sock_count] = accept(sock, (struct sockaddr*)&client_addr, &addr_len)) > 0) {
+			//printf("client ip : %s client_sock : %d\n", inet_ntoa(client_addr.sin_addr), client_sock[client_sock_count]);
+			server_recv[client_sock_count] = _beginthreadex(NULL, 0, (_beginthreadex_proc_type)receiveData, NULL, 0, NULL);
+			while (!connectSw) { delay(1); }
+			connectSw = FALSE;
+		}
+	}
+	clrscr();
 
-	printf("상대를 기다리고 있습니다..\n");
+	putsxy(0, 0, "모두 접속 완료! 게임을 시작합니다.");
+	sendData("ok");
+	delay(2000);
+	playGame();
 
-	server_accept = _beginthreadex(NULL, 0, (_beginthreadex_proc_type)acceptClient, NULL, 0, NULL);
+	//server_accept = _beginthreadex(NULL, 0, (_beginthreadex_proc_type)acceptClient, NULL, 0, NULL);
 	server_send = _beginthreadex(NULL, 0, (_beginthreadex_proc_type)inputData, NULL, 0, NULL);
 	WaitForSingleObject(server_accept, INFINITE);
 	WaitForSingleObject(server_send, INFINITE);

@@ -5,6 +5,7 @@ int menusCount = 0;
 int save_menusCount = -1;
 char menus[4][30] = {
 	{ "G A M E  S T A R T" },
+	{ "M U L T I  P L A Y" },
 	{ "S E T T I N G" },
 	{ "E X I T" }
 };
@@ -71,6 +72,7 @@ void printTetris() {
 	color(WHITE); putsxy(26, 12, menus[0]);
 	putsxy(26, 14, menus[1]);
 	putsxy(26, 16, menus[2]);
+	putsxy(26, 18, menus[3]);
 	color(WHITE);
 	putsxy(65, 20, "made by SOMA");
 }
@@ -80,7 +82,7 @@ void startPage() {
 	
 	printTetris();
 	while (1) {
-		for (i = 0; i < 3; i++) {
+		for (i = 0; i < 4; i++) {
 			if (menusCount == i) {
 				color(GREEN);
 				putsxy(26, menu_Y + (i * 2), menus[i]);
@@ -92,18 +94,19 @@ void startPage() {
 		switch (ch) {
 			case DOWN: {
 				save_menusCount = menusCount;
-				menusCount = menusCount == 2 ? 0 : menusCount + 1;
+				menusCount = menusCount == 3 ? 0 : menusCount + 1;
 				break;
 			}
 			case UP: {
 				save_menusCount = menusCount;
-				menusCount = menusCount == 0 ? 2 : menusCount - 1;
+				menusCount = menusCount == 0 ? 3 : menusCount - 1;
 				break;
 			}
 			case ENTER: {
 				if (menusCount == 0) playGame();
-				else if (menusCount == 1) { configPage(); printTetris(); }
-				else if (menusCount == 2) exit(1);
+				else if (menusCount == 1) { startMultiMode(); printTetris();}
+				else if (menusCount == 2) { configPage(); printTetris(); }
+				else if (menusCount == 3) exit(1);
 				break;
 			}
 		}
