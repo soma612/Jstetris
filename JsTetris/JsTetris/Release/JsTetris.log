@@ -1,17 +1,1 @@
-﻿  JsTetris.c
-c:\dev\cprojects\jstetris\jstetris\singleplay.h(11): warning C4047: '=': 'HANDLE'의 간접 참조 수준이 'uintptr_t'과(와) 다릅니다.
-c:\dev\cprojects\jstetris\jstetris\singleplay.h(12): warning C4047: '=': 'HANDLE'의 간접 참조 수준이 'uintptr_t'과(와) 다릅니다.
-c:\dev\cprojects\jstetris\jstetris\multiplay.h(51): warning C4047: '=': 'HANDLE'의 간접 참조 수준이 'uintptr_t'과(와) 다릅니다.
-c:\dev\cprojects\jstetris\jstetris\multiplay.h(52): warning C4047: '=': 'HANDLE'의 간접 참조 수준이 'uintptr_t'과(와) 다릅니다.
-c:\dev\cprojects\jstetris\jstetris\server.h(59): warning C4047: '=': 'HANDLE'의 간접 참조 수준이 'uintptr_t'과(와) 다릅니다.
-c:\dev\cprojects\jstetris\jstetris\server.h(121): warning C4047: '=': 'HANDLE'의 간접 참조 수준이 'uintptr_t'과(와) 다릅니다.
-c:\dev\cprojects\jstetris\jstetris\server.h(134): warning C4047: '=': 'HANDLE'의 간접 참조 수준이 'uintptr_t'과(와) 다릅니다.
-c:\dev\cprojects\jstetris\jstetris\client.h(88): warning C4047: '=': 'HANDLE'의 간접 참조 수준이 'uintptr_t'과(와) 다릅니다.
-c:\dev\cprojects\jstetris\jstetris\client.h(89): warning C4047: '=': 'HANDLE'의 간접 참조 수준이 'uintptr_t'과(와) 다릅니다.
-  코드를 생성하고 있습니다.
-c:\dev\cprojects\jstetris\jstetris\singleplay.h(133): warning C4716: 'PlayerMoveAction': 값을 반환해야 합니다.
-  3 of 84 functions ( 3.6%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    4 functions had inline decision re-evaluated but remain unchanged
-  코드를 생성했습니다.
-  JsTetris.vcxproj -> C:\dev\CProjects\JsTetris\Release\JsTetris.exe
+﻿  JsTetris.vcxproj -> C:\dev\CProjects\JsTetris\Release\JsTetris.exe
