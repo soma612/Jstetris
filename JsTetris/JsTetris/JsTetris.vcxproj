@@ -22,11 +22,16 @@
     <ClInclude Include="blockEvent.h" />
     <ClInclude Include="client.h" />
     <ClInclude Include="ConfigPage.h" />
-    <ClInclude Include="JsTetris.h" />
+    <ClInclude Include="SingleMode.h" />
+    <ClInclude Include="mBlockEvent.h" />
+    <ClInclude Include="MultiMode.h" />
+    <ClInclude Include="mPrintInfo.h" />
     <ClInclude Include="MultiModePage.h" />
+    <ClInclude Include="MultiPlay.h" />
     <ClInclude Include="PausePage.h" />
     <ClInclude Include="printInfo.h" />
     <ClInclude Include="server.h" />
+    <ClInclude Include="SinglePlay.h" />
     <ClInclude Include="StartPage.h" />
     <ClInclude Include="tools.h" />
   </ItemGroup>

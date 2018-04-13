@@ -6,7 +6,9 @@
 #pragma comment(lib,"ws2_32.lib")
 #include<WinSock2.h>
 #include<Windows.h>
-#include "JsTetris.h"
+#include "SingleMode.h"
+#include "MultiMode.h"
+
 #else
 #include<unistd.h>
 #include<sys/types.h>
@@ -37,7 +39,7 @@ int CreceiveData() {
 				clrscr();
 				printf("모두 접속 완료! 게임을 시작합니다.");
 				delay(2000);
-				playGame();
+				initGame();
 			}
 		}
 		else if (mod == MOD_GAME) {
@@ -89,7 +91,6 @@ int client() {
 	
 	WaitForSingleObject(client_recv, INFINITE);
 	WaitForSingleObject(client_send, INFINITE);
-
 
 #ifndef __linux__
 	closesocket(sock);

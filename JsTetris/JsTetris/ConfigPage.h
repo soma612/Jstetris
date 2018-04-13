@@ -1,4 +1,4 @@
-#include "JsTetris.h"
+#include "SingleMode.h"
 
 void configPage() {
 	clrscr();

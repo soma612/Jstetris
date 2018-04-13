@@ -1,4 +1,4 @@
-#include "JsTetris.h"
+#include "SingleMode.h"
 
 int pausePage() {
 	int menuCount = 0;

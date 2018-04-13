@@ -22,6 +22,12 @@
     <Filter Include="헤더 파일\main">
       <UniqueIdentifier>{b2a174b2-6e56-4cc0-9700-93f83867ae1d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\MultiMode\Server">
+      <UniqueIdentifier>{2c49752d-f464-4bd7-a382-f33bc7574c62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\MultiMode\Client">
+      <UniqueIdentifier>{0ce88ed1-b289-4c28-93a3-aff04301014d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="blockEvent.h">
@@ -36,23 +42,38 @@
     <ClInclude Include="printInfo.h">
       <Filter>헤더 파일\SingleMode</Filter>
     </ClInclude>
-    <ClInclude Include="StartPage.h">
-      <Filter>헤더 파일\SingleMode</Filter>
-    </ClInclude>
-    <ClInclude Include="client.h">
-      <Filter>헤더 파일\MultiMode</Filter>
-    </ClInclude>
-    <ClInclude Include="server.h">
-      <Filter>헤더 파일\MultiMode</Filter>
-    </ClInclude>
-    <ClInclude Include="MultiModePage.h">
-      <Filter>헤더 파일\MultiMode</Filter>
-    </ClInclude>
-    <ClInclude Include="JsTetris.h">
-      <Filter>헤더 파일\main</Filter>
-    </ClInclude>
     <ClInclude Include="tools.h">
       <Filter>헤더 파일\main</Filter>
+    </ClInclude>
+    <ClInclude Include="SinglePlay.h">
+      <Filter>헤더 파일\SingleMode</Filter>
+    </ClInclude>
+    <ClInclude Include="StartPage.h">
+      <Filter>헤더 파일\main</Filter>
+    </ClInclude>
+    <ClInclude Include="server.h">
+      <Filter>헤더 파일\MultiMode\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="client.h">
+      <Filter>헤더 파일\MultiMode\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiPlay.h">
+      <Filter>헤더 파일\MultiMode\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="mPrintInfo.h">
+      <Filter>헤더 파일\MultiMode\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiModePage.h">
+      <Filter>헤더 파일\MultiMode\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="mBlockEvent.h">
+      <Filter>헤더 파일\MultiMode\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleMode.h">
+      <Filter>헤더 파일\SingleMode</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiMode.h">
+      <Filter>헤더 파일\MultiMode\Server</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

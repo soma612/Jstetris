@@ -1,5 +1,6 @@
 #pragma once
-#include "JsTetris.h"
+#include "MultiMode.h"
+
 
 int chosePlayerCount() {
 	char playerCount[40] = "플 레 이 어(최대 4인) : ◁ 2 ▷";
@@ -79,7 +80,7 @@ int startMultiMode() {
 			case ENTER: {
 				if (menuCount == 0) {
 					chosePlayerCount();
-					if (server() == 1) printf("연결실패. 다시 시도해주세요");
+					//if (server() == 1) printf("연결실패. 다시 시도해주세요");
 					break;
 				}
 				else if (menuCount == 1) {

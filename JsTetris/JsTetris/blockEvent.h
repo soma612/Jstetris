@@ -1,4 +1,4 @@
-#include "JsTetris.h"
+#include "SingleMode.h"
 
 
 void createNewBlock() {
@@ -123,6 +123,7 @@ void changeBlockToWalll() {
 	removeBlock();
 	isBlockCreated = FALSE;
 	ishold = TRUE;
+	isShaking = TRUE;
 	loadStage();
 	checkAllLine();
 	//isBlockCreated = FALSE;
@@ -173,6 +174,7 @@ void checkAllLine() {
 	if (combo > 1) {
 		int comboBonus = 0;
 		gotoxy(MSG_X, MSG_Y + 2);
+		if (combo > 6) combo = 6;
 		switch (combo) {
 		case 2: color(WHITE); printf("COMBO"); comboBonus = 200; break;
 		case 3: color(GREEN); printf("DOUBLE!"); comboBonus = 350; break;

@@ -1,4 +1,5 @@
-#include "JsTetris.h"
+#include "SingleMode.h"
+#include "MultiMode.h"
 
 int menu_Y = 12;
 int menusCount = 0;
@@ -9,7 +10,6 @@ char menus[4][30] = {
 	{ "S E T T I N G" },
 	{ "E X I T" }
 };
-
 int tetris[6][5][3] = {
 	{
 		{ 1,1,1 },
@@ -53,8 +53,8 @@ int tetris[6][5][3] = {
 		{ 0,0,1 },
 		{ 1,1,1 }
 	}
-
 };
+
 void printTetris() {
 	clrscr();
 	int i, j, k;
@@ -103,7 +103,8 @@ void startPage() {
 				break;
 			}
 			case ENTER: {
-				if (menusCount == 0) playGame();
+				if (menusCount == 0) initGame();
+				//if (menusCount == 0) playMultiGame();
 				else if (menusCount == 1) { startMultiMode(); printTetris();}
 				else if (menusCount == 2) { configPage(); printTetris(); }
 				else if (menusCount == 3) exit(1);

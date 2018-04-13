@@ -2,13 +2,14 @@
 
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 
-
-
 #ifndef __xlinux__
 #pragma comment(lib,"ws2_32.lib")
 #include<WinSock2.h>
 #include<Windows.h>
-#include "JsTetris.h"
+#include "MultiPlay.h"
+#include "mBlockEvent.h"
+#include "mPrintInfo.h"
+#include "MultiMode.h"
 #else
 #include<unistd.h>
 #include<sys/types.h>
@@ -36,6 +37,11 @@ int acceptClient();
 int sendData(char buffer[1024]);
 int inputData();
 int receiveData();
+int playMultiGame();
+void multiPlaying();
+int mAutoDownBlock();
+void mListenMsg();
+
 
 int sendData(char buffer[1024]) {
 	int i;
@@ -122,7 +128,7 @@ int server(int playerCount) {
 	putsxy(0, 0, "모두 접속 완료! 게임을 시작합니다.");
 	sendData("ok");
 	delay(2000);
-	playGame();
+	playMultiGame();
 
 	//server_accept = _beginthreadex(NULL, 0, (_beginthreadex_proc_type)acceptClient, NULL, 0, NULL);
 	server_send = _beginthreadex(NULL, 0, (_beginthreadex_proc_type)inputData, NULL, 0, NULL);
@@ -137,3 +143,4 @@ int server(int playerCount) {
 	#endif
 	return 0;
 }
+

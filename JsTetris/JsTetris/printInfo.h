@@ -1,4 +1,4 @@
-#include "JsTetris.h"
+#include "SingleMode.h"
 
 void loadStage() {
 	clrscr();
@@ -24,23 +24,24 @@ void printInfo() {
 	for (i = 0; i < 22; i++) {
 		gotoxy(56, i); printf("|");
 	}
-	gotoxy(59, 1); printf("┏━━━━━━━━━━━━━━┓");
-	gotoxy(59, 2); printf("┃  T E T R I S ┃ ");
-	gotoxy(59, 3); printf("┗━━━━━━━━━━━━━━┛");
+	gotoxy(59, 0); printf("┏━━━━━━━━━━━━━━┓");
+	gotoxy(59, 1); printf("┃  T E T R I S ┃ ");
+	gotoxy(59, 2); printf("┗━━━━━━━━━━━━━━┛");
 
 	gotoxy(2, 8); printf("스테이지 : %d", 11 - leveltime / 100);
 	gotoxy(2, 10); printf("점수 : %d", score);
 
-	gotoxy(66, 5); printf("회전");
-	gotoxy(67, 6); printf("↑");
-	gotoxy(60, 7); printf("LEFT ←  → RIGHT");
-	gotoxy(67, 8); printf("↓");
-	gotoxy(66, 9); printf("DOWN");
-	gotoxy(60, 11); printf("Space Bar:퀵다운");
-	gotoxy(60, 13); printf("Z Key:블록 홀드");
-	gotoxy(60, 15); printf("C Key:블록 역회전");
-	gotoxy(60, 17); printf("P Key:일시정지");
-	gotoxy(60, 19); printf("R Key:게임 재시작");
+	gotoxy(66, 4); printf("회전");
+	gotoxy(67, 5); printf("↑");
+	gotoxy(60, 6); printf("LEFT ←  → RIGHT");
+	gotoxy(67, 7); printf("↓");
+	gotoxy(66, 8); printf("DOWN");
+	gotoxy(60, 10); printf("Space Bar:퀵다운");
+	gotoxy(60, 12); printf("Z Key:블록 홀드");
+	gotoxy(60, 14); printf("C Key:블록 역회전");
+	gotoxy(60, 16); printf("P Key:일시정지");
+	gotoxy(60, 18); printf("R Key:게임 재시작");
+	gotoxy(60, 20); printf("Tab Key: 블록 섞기");
 
 }
 void printNextBlock() {
